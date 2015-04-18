@@ -1,0 +1,7 @@
+At first we are presented with a standard HTTP Authorization. When canceling the sending of a proper authorization, we get to a page that tells us that they're getting one row and checking that it only returns one row. Typical SQL injection.
+
+So let's simply give an SQL injection as the username and leave the password blank, while limiting the rows returned as 1.
+
+curl --user "' OR 1=1 LIMIT 1 -- '": http://web.camsctf.com/a/
+
+Flag: {mY_r3alm_of_AUTHORIZATIONZ}
