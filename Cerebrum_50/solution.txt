@@ -1,0 +1,7 @@
+Copy and paste the code into a Brainfuck interpreter. HOLY SHIT THIS IS SO FUCKING COOL.
+
+http://esoteric.sange.fi/brainfuck/impl/interp/i.html
+
+Flag: {now_mind_fu**ed_gr8}
+
+Note to self: Learn how to disguise code as ASCII art
