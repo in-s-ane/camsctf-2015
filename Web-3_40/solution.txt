@@ -1,0 +1,15 @@
+>> curl -d "vote=900999991" http://web.camsctf.com/3/
+<!DOCTYPE HTML>
+<html>
+        <head>
+                <link rel="stylesheet" href="style.css" type="text/css" />
+                <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                <script type="text/javascript" src="scripts.js"></script>
+                <title>Web Exploitation 3</title>
+        </head>
+
+        <body>
+                <p>"Fine. Here you go then. Flag: {i_increased_integers?}" - M4gn4te Troll</p>
+        </body>
+</html>
