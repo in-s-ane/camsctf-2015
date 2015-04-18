@@ -27,7 +27,7 @@ PROPFIND will give us two pieces of information:
     >> curl -X PROPFIND "http://coffee.camsctf.com/" -b "PHPSESSID=09u7imkuo315bo0s3o1h98a433"
     <!DOCTYPE html>
     <title>CCTF Coffee Machine</title>
-    AES-Encryption: SxKgRaqX; Brew-time: 1429399345%  
+    AES-Encryption: SxKgRaqX; Brew-time: 1429399345
 
     We don't know what we need this AES-Encryption string for, but we'll see in a
     moment. The Brew-time number is actually useless.
@@ -40,7 +40,7 @@ and data in the message body "sugar=23&grams=23&amount=23", and using the
 "Accept-Additions" header along with the ambiguously documented syntax for
 specifying the types and quantities of these additions. None of the many
 permutations we tried worked. We contacted one of the administrators of the CTF
-for advice, and as it turns out, the coffee pot wasn't implement to
+for advice, and as it turns out, the coffee pot wasn't implemented to
 specification as much as we thought it was. Eventually, the admin revealed that
 all we had to do was send the number to the server. We wrote a script in the
 process of trying to solve this problem, so here is the result:
