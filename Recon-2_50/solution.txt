@@ -1,0 +1,7 @@
+Find the website for the CAMS CSC (Computer Security Club)
+
+http://www.camscsc.org
+
+Scroll down to the bottom to find the coordinates of the meeting room.
+
+{33.8614052172, -118.2551897198}
