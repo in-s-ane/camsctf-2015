@@ -1,0 +1,8 @@
+Check out ~/.bash_history and notice that the person who set up this VM was
+messing around with 742.txt, so let's just read it:
+
+{l00king_4rouNd_3H?}
+
+An alternate solution is to check ~/.local/share/Trash/files to find 2.py which
+is the script used to generate the ~/Desktop/2/ directory. The script file
+contains the flag as well.

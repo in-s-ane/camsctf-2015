@@ -1,0 +1,15 @@
+"News that some mediocre-guy is becoming popular has been tumbling around lately. Tag along with the crowd and check out his blog."
+
+The major hints in the problem are the puns using "tumbling" and "tag along."
+Clearly, we should find mediocre-guy's tumblr, which isn't too hard to find with
+a quick Google search. We can verify this is right by the bio, which tells us he
+is a student at CAMS. Now, we have to find the flag by leveraging tumblr's tags.
+So let's do a tag search for flag:
+http://mediocre-guy.tumblr.com/tagged/flag
+The first post is this, which contains two images, with one of them being
+transparent so as to be difficult to read. The flag is the second image.:
+
+http://mediocre-guy.tumblr.com/post/105948899047
+https://33.media.tumblr.com/4d6f8b25b85d798b764d412dc71a8952/tumblr_inline_nkini7SFks1rrd5yq.png
+
+flag: {tr4n5p4r3ncy_ftw}

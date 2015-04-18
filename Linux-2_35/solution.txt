@@ -1,0 +1,3 @@
+Open the background.xcf in GIMP
+The layer name is the flag:
+{WELC0ME_T0_L1NUX}

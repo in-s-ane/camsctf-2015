@@ -1,0 +1,3 @@
+>> unzip excel_data.xlsx
+>> cat excel/xl/charts/flag.txt
+{iT's_r1gh7_h3r3}

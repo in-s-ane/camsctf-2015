@@ -1,0 +1,20 @@
+The first one requires and overflow of the int so that it wraps around into the negative.
+
+1=134234213412342134
+
+The second and third ones require the hash to be the same, but the raw values to be different. This can be done by using arrays where the elements are the same, but then the hash will come out the same.
+
+2[]=1
+3[]=2
+
+The fourth one requires us to figure out the first number in the sequence that they have already given us the second and third numbers, and since I'm too lazy to reverse engineer this, I'll take the seed and generate the first random number and send that.
+
+4=php -r "mt_srand(time() ^ 424242424242); echo mt_rand();"
+
+The fifth one is a strcmp on the flag and the input, so we exploit how strcmp always works when comparing arrays and strings.
+
+5[]=1
+
+> php -r "mt_srand(time() ^ 424242424242); echo mt_rand();" | awk '{ print "1=134234213412342134&2[]=1&3[]=2&4=" $0 "&5[]=1" }' | curl -d @- http://web.camsctf.com/9/
+
+Flag: {php_qu1te_amaz1ng_n0?}

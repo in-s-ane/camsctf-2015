@@ -1,0 +1,6 @@
+http://www.websitemagazine.com/content/blogs/posts/archive/2014/07/22/do-you-know-how-big-the-internet-really-is-infographic.aspx
+
+"As of 2014 Google has indexed 200 Terabytes (TB) of data. To put that into
+perspective 1 TB is equivalent to 1024 Gigabytes (GB). However, Google’s 200 TB
+is just an estimated 0.004 percent of the total Internet. Perhaps even more
+impressive is the fact that 16 years of video is uploaded to YouTube every day."
