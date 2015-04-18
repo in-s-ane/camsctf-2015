@@ -1,0 +1,7 @@
+Run format.py to get the java binary.
+
+Decompile the java binary: http://www.showmycode.com
+
+See givemeflag.java which is altered to print out the flag.
+
+Flag: {i_am_java_master}
