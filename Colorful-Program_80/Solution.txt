@@ -1,0 +1,11 @@
+Colorful program gives you a picture huh? It's probably piet...
+
+So go here:
+http://www.bertnase.de/npiet/npiet-execute.php
+
+Then upload, returns an error, go back, convert between netbpm format until you
+hit ppm, which gives you the right answer!
+
+The piet program prints
+Flag: {c0l0rbl1nd_4_lyfe}
+We're serious. One of our team members is color blind.
