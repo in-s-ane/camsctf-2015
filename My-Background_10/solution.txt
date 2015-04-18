@@ -1,0 +1,3 @@
+strings black.png
+
+{iF_0nly_they_were_ALL_th1s_34sy}
