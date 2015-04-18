@@ -1,0 +1,12 @@
+Linux is a very libre operating system. What does CSC's presentation say about it?
+Hint: In March 2014, a very important CEO of Desolate Games made an excellent video on Linux.
+
+From the hint, we get to the page http://www.desolategames.com/updates, where we find that the CEO is Oskar. Finding him on Github leads us to https://github.com/oskarwirga
+Looking as what Oskar has contributed to, we find that he is part of CSC (DUHH).
+
+And where do you find videos? Youtube! So finding CSC on Youtube leads us to https://www.youtube.com/channel/UCBoN66yEu3Bm4UYvlvT3KMQ/videos
+
+We see a video on the introduction to Linux and it was posted on March 2014. Bingo.
+https://www.youtube.com/watch?v=b7oe7_xgFRc
+
+{gnU+L1nuX_f0r_lyfe}
