@@ -1,0 +1,28 @@
+Okay, so going in to this challenge, I was an extreme n00b at packet analysis
+and Wireshark, which is why this took me 5 hours to solve. Alright, so I started
+off by researching how to decrypt SSL (TLSv1.2) traffic, and I quickly learned
+that I have to use the master key log that we are given to set configure
+Wireshark to be able to decrypt the frames in the capture file, since there is
+no RSA Session ID provided. The format of the lines of the "something" file
+we're given is: 
+CLIENT_RANDOM <Random value from ClientHello> <TLS master secret>
+
+If we configure Wireshark in preferences -> protocol -> SSL to read the master
+secret from this log file, we should be able to read the ssl streams (It's not
+necessary, but I figured out that line 14 is the correct line). At first, I had
+problems because the version of Wireshark I was using did not support decrypting
+TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014), so I decided to switch over to
+Windows and grab the latest stable version of Wireshark. After successfully
+decrypting the frames in Wireshark, the data is still mostly illegible at this
+point. Because of my inexperience, I had no idea why.... So, I tried file
+carving images from the captured data, expecting one of the images to contain
+the flag. After manually carving 2 PNGs and 1 GIF, I decided that I must not be
+on the right track. I was confused because the headers showed that HTML and
+Javascript was being transferred, but not in plaintext, until I finally realized
+why: the files were gzipped, and I was looking at compressed data. A quick
+Google search reveals that Wireshark doesn't display the uncompressed data in
+the default pane, so we have to look for the pane that is labeled "Uncompressed
+entity body." Alternatively, we can expand the "Line-based text data" section of
+the packet data. Here, we'll (finally) find some plaintext Javascript containing
+the string "%7Bdecrypting_sslolz_te_gusta%3F%7D" which urldecoded is our flag:
+{decrypting_sslolz_te_gusta?}
