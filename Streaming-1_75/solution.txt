@@ -1,0 +1,7 @@
+This implements hiding files in Alternate Data Streams. Literally I had no idea what to do because the stream detectors weren't working. So on a whim, I executed:
+
+more < secret.docx:flag.txt
+
+{I_cAn_H1dE_g00d}
+
+Note that this only works on Windows since NTFS allows Alternate Data Streams.
