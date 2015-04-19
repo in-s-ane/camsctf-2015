@@ -1,0 +1,17 @@
+Let's get root so we can have free reign inside our VM!
+
+First, boot up a live CD.
+Then:
+>> mkdir mnt
+>> sudo mount -t ext3 /dev/sda3 mnt
+>> vi /etc/sudoers
+
+Uncomment the line that says " %wheel ALL=(ALL) ALL"
+Since the cs user is a member of the wheel group, this is all we need to gain
+sudo access.
+
+Boot back into the VM, and run `sudo su` with your password cctf.
+Now, we can access the /home/flag/flag.txt
+
+>> cat /home/flag/flag.txt
+{r00t_0nlY}

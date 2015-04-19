@@ -1,0 +1,6 @@
+Boot using a live CD.
+
+mkdir mnt
+sudo mount -t ext3 /dev/sda4 mnt
+cat mnt/flag.txt
+{br0ken_fstab}

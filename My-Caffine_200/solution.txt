@@ -1,0 +1,63 @@
+We first approached this challenge by determining the method in which the server
+accepts input. After some trial and error, we came upon this:
+
+>> curl http://coffee.camsctf.com/ -d ""
+<!DOCTYPE html>
+<title>CCTF Coffee Machine</title>
+Started brewing and adding milk.
+
+Great, so we know we can send a POST request to start brewing, but how do we
+stop it? Also, how does the server keep track of different people's brews? On, a
+hunch, we assumed that the server used the PHPSESSID cookie to keep track of
+different users, so we just chose one PHPSESSID that we were assigned to stick
+to for all later commands. After trying MANY different ways of sending the
+server an amount of sugar to add, as well as to stop the brewing and get the
+coffee, I tried on a whim:
+
+curl -X BREW "http://coffee.camsctf.com/" -b "PHPSESSID=09u7imkuo315bo0s3o1h98a433"
+
+which gave us the same output as the POST request! A bit of research shows that
+this request method is associated with the Hyper Text Coffee Pot Control
+Protocol (HTCPCP). We can now use the BREW, WHEN, PROPFIND, and GET methods to
+control the brewing process.
+
+BREW will start the brewing.
+WHEN will stop the brewing.
+PROPFIND will give us two pieces of information:
+    >> curl -X PROPFIND "http://coffee.camsctf.com/" -b "PHPSESSID=09u7imkuo315bo0s3o1h98a433"
+    <!DOCTYPE html>
+    <title>CCTF Coffee Machine</title>
+    AES-Encryption: SxKgRaqX; Brew-time: 1429399345
+
+    We don't know what we need this AES-Encryption string for, but we'll see in a
+    moment. The Brew-time number is actually useless.
+GET will retrieve the coffee.
+
+Now begins our journey to figure out how to specify the amount of sugar to add
+to the coffee. Among the things we tried was reading the entire specification
+for HTCPCP and using the "Content-Type: application/coffee-pot-command" header
+and data in the message body "sugar=23&grams=23&amount=23", and using the
+"Accept-Additions" header along with the ambiguously documented syntax for
+specifying the types and quantities of these additions. None of the many
+permutations we tried worked. We contacted one of the administrators of the CTF
+for advice, and as it turns out, the coffee pot wasn't implemented to
+specification as much as we thought it was. Eventually, the admin revealed that
+all we had to do was send the number to the server. We wrote a script in the
+process of trying to solve this problem, so here is the result:
+
+>> ./coffee.sh
+<!DOCTYPE html>
+<title>CCTF Coffee Machine</title>
+Started brewing and adding milk.<!DOCTYPE html>
+<title>CCTF Coffee Machine</title>
+Stopped pouring milk. Coffee completed.<!DOCTYPE html>
+<title>CCTF Coffee Machine</title>
+AES-Encryption: SxKgRaqX; Brew-time: 1429399751<!DOCTYPE html>
+<title>CCTF Coffee Machine</title>
++c70Xz/73+4riCRCllkBKm5MClqoTv7CUOJYtrS5LL8=
+
+If we base64 decode "+c70Xz/73+4riCRCllkBKm5MClqoTv7CUOJYtrS5LL8=" we get
+nonsense, so we surmised that this was AES encrypted using the AES-Encryption
+string from before as the key. Using http://aesencryption.net/ and AES-128 to
+decrypt the string with SxKgRaqX as the key results in {htcpcp_iz_s0_real},
+which is our flag.
