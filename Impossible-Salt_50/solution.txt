@@ -1,0 +1,13 @@
+If we look at the impossible_salt.py script we are given, we notice that the A
+in SALT is replaced with a unicode capitalized alpha. As a result, python throws
+a hissy fit when we try to run the program. Let's just rename SΑLT to S4LT. Now,
+if we inspect the algorithm, we'll notice that S4LT is the result of the
+concatenation of SALT and a random number between 0 and 9. Therefore, there are
+only 10 different salts! Let's run the program and try them all.
+When we get to the salt:
+efe855d8ae760f3f49445fd2eb4e718c751d6596900ec1b6dc6c6798b415aa9894f9a92739f5d70bce44c820781c9f75860552165002c09433ddd5fb124bd807
+We get the filename:
+1d039f52c3d7f5b4919f6806bd377d5044cce17b1da01ac6ec
+
+which contains the flag:
+{lol_unic0de_l0l}
