@@ -1,0 +1,5 @@
+There are pixels with alpha level 255 and 254. We darken the ones with 254 alpha and we get something that resembles a QR code, but has the alignment boxes erased. Adding those boxes, we get the flag.
+
+Shoot! Ninteenus has completely obliterated our infrastructure. It is a monster with power beyond what we could have ever expected.
+```{Wh47_h4v3_w3_d0n3?}```
+Prophet AFK
