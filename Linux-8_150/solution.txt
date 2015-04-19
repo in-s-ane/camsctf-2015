@@ -1,0 +1,8 @@
+So after solving Linux-7, I went back to /home/linuxuser123 and kept delving
+around. I noticed the .local directory and decided to check the Trash again,
+where I found a directory name root/. Inside the directory is a file named
+passwds:
+
+>> cat passwds
+Password:
+{s0_s3cr3t}
