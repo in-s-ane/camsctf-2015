@@ -1,0 +1,13 @@
+Looking at the ciphertext, I figured it resembled a transposition of some sort.
+Clearly, it's some type of simple cipher, so I went on
+http://rumkin.com/tools/cipher/ and just went down the line of ciphers, sticking
+the ciphertext into each one. When I got to Rotate, I just dumped the ciphertext
+into the text box and started counting up from 1 for the box width. Literally as
+I was doing this, I started wondering: "What if they just gave us a number in the
+problem and just told us to use it, in case we needed it." As soon as that
+thought passed my mind, the flag flashed in front of my eyes.
+
+Rotate Cipher
+Box Width: 14
+
+Our covert operations have been discovered!! We must improve our security and allocate all resources to a direct assault against Meterus 381. {74k3_7h3m_d0wn} before they can respond.Panadero AFK.
