@@ -1,0 +1,6 @@
+I clearly did not solve these problems in the correct order, or in the correct
+way, so... after solving Linux-9, we have root privileges, so I explored
+linuxuser123's home directory. Here we find another bash_history file, the
+equivalent to striking gold! As soon as we open the file in vi, we find the
+flag:
+{us1NG_thE_T3rm1nAL}
