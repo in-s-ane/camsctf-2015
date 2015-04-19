@@ -1,0 +1,6 @@
+After solving Linux 6, I continued reading through the bash_history, and I
+noticed that linuxuser123 installed apache and wrote to an index.html file in
+/srv/http, so of course I had to see what was there!
+
+>> cat /srv/http/index.html
+<p>{l0calh0sts}</p>
