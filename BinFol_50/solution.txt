@@ -1,0 +1,13 @@
+First, let's sort the folders numerically.
+
+We know the flag has to begin with '{', so let's look at the binary
+representation of this character: 01111011.
+
+Now let's look for a pattern in the folder names. We first notice the chain for
+four '1's in the binary representation, and we also notice that there is a chain
+of folders 1,2,3,4 before a folder is missing in the numerical order. We can
+assume that the folders are supposed to start at 0, signifying a zero bit in the
+binary representation of the flag. Now, we just write up a python script to
+generate the binary string, and we can then just convert the binary to a string:
+
+{0NE_ZER0_0NE}
