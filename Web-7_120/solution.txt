@@ -1,0 +1,13 @@
+Whenever we input a filename as the argument for file, the server outputs the contents of the file, but of the file with a .txt appended to it. In perl, we can exploit this by adding a %00 to the end of the filename, which serves as a string termination in the underlying C library.
+
+So, in the css stylesheet for the webpage, we see that someone has added a comment for the flag: http://web.camsctf.com/7/style.css
+/* flag.png */
+
+Thus, we have to expose the contents of that png file.
+
+curl web.camsctf.com/7/read.pl -d "file=flag.png%00" > flag.png
+
+{perl_1z_1n_c_t00}
+
+Also note that we had to use a POST request here because using a GET request with web.camsctf.com/7/read.pl?file=flag.png%00 would encounter a mod_security error from Apache.
+Fun problem, but took quite a while since I was stuck on the mod_security and the finding the file that we were supposed to read.
