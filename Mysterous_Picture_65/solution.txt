@@ -1,0 +1,9 @@
+first you suspect it's a bar code, so you check for non-white pixels, then you
+realize that nothing is white... so you floodfill the (254, 254, 254) ones as
+black, then you realize that the remaining pixels are quite peculiar. On row 42,
+from pixel 0 to pixel 43, the values are all either 254 or 255... very
+interesting. So you put that in a script, assume it's binary, and the result is 
+011110110101000001001001010011000110110001101111011101110101111101000110011010010100011101101000010101000111110100000000000000000
+
+which translates to:
+{PILlow_FiGhT} with a bunch of nulls
