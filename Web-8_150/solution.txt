@@ -1,0 +1,14 @@
+Inspecting the javascript code, we learn that the password is of length 12 and
+the encrypted data is XORed with the password block-wise. All we have to do is
+guess the password! We see that the decrypted data is eval()'d, so we can assume
+that the decrypted data starts with console.log(). Wait, how is long is that?!
+"console.log(" is 12 characters! Let's reverse engineer the password! Since the
+decryption algorithm is just an XOR of the password with each number in the
+array, we can reverse this by performing an XOR of each array element with the
+corresponding letter in "console.log(". See the comments in web8.js for the
+results. Then, we just need to simulate keypresses (made easy by jQuery).
+
+Dumping the keypress simulation code into the console of the page for Web 8
+gives us the flag!
+
+{n0t_hArD_ju57_bA51c_j4v4scr1p7_sk1llz_R3qu1r3d}

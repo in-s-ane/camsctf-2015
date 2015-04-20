@@ -26,6 +26,31 @@ $(document)
             })
     }), keys = [], $(document)
     .keypress(function(e) {
+        // 98 -> numpad2
+        // 101 -> numpad5
+        // 100 -> numpad4
+        // 97 -> numpad1
+        // 122 -> f11
+        // 122 -> f11
+        // 108 -> numpad enter
+        // 101 -> numpad5
+        // 109 -> subtract
+        // 101 -> numpad5
+        // 110 -> decimal point
+        // 116 -> f5
+        jQuery.event.trigger({ type : 'keypress', which : 98 });
+        jQuery.event.trigger({ type : 'keypress', which : 101 });
+        jQuery.event.trigger({ type : 'keypress', which : 100 });
+        jQuery.event.trigger({ type : 'keypress', which : 97 });
+        jQuery.event.trigger({ type : 'keypress', which : 122 });
+        jQuery.event.trigger({ type : 'keypress', which : 122 });
+        jQuery.event.trigger({ type : 'keypress', which : 108 });
+        jQuery.event.trigger({ type : 'keypress', which : 101 });
+        jQuery.event.trigger({ type : 'keypress', which : 109 });
+        jQuery.event.trigger({ type : 'keypress', which : 101 });
+        jQuery.event.trigger({ type : 'keypress', which : 110 });
+        jQuery.event.trigger({ type : 'keypress', which : 116 });
+        // console.log("{n0t_hArD_ju57_bA51c_j4v4scr1p7_sk1llz_R3qu1r3d}");
         encrypted = [1, 10, 10,
         18, 21, 22, 9, 75, 1, 10, 9, 92, 64, 30, 10, 81, 14, 37,
         4, 36, 31, 33, 49, 30, 23, 80, 83, 62, 24, 59, 89, 84,
@@ -46,3 +71,7 @@ $(document)
         }
         return !1
     });
+
+function simulateKeyPress(character) {
+  jQuery.event.trigger({ type : 'keypress', which : character.charCodeAt(0) });
+}
