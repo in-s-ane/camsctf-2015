@@ -1,0 +1,11 @@
+From Crypto 2, we got a passphrase in brackets.
+
+b3_s3cUrE_aNd_s7aY_s4f3
+
+Using this we, run a Vigenére Autokey on the cipher text with the alphabet key and passphrase both being the one above.
+
+
+We're hit! Our networks have been crippled by L.A.G. Inc., and our databases have been breached! {4dv153_u5}, Ninteenus.
+Browning Out.
+
+Flag: {4dv153_u5}
