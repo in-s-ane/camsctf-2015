@@ -1,0 +1,20 @@
+First we get a cookie that encodes our IP address and we have to spoof it so that it is the IP address of the admin user. What's the IP address of admin? 127.0.0.1 or otherwise known as LOCALHOST.
+
+'O:5:"Admin":1:{s:4:"name";s:9:"127.0.0.1";}'.encode("base64") => Tzo1OiJBZG1pbiI6MTp7czo0OiJuYW1lIjtzOjk6IjEyNy4wLjAuMSI7fQ==
+curl --cookie-jar - http://web.camsctf.com/f/admin.php -b "data=Tzo1OiJBZG1pbiI6MTp7czo0OiJuYW1lIjtzOjk6IjEyNy4wLjAuMSI7fQ=="
+
+And then we get the actual source. Knp3HWpc.php
+
+In the source, you can find users credentials, but those are not authorized. But you noticed that POIgnant has POI capitalized. So, you know it has something to do with POI, which turns out to be PHP Objection Injection (thanks to Steve's List) - https://www.owasp.org/index.php/PHP_Object_Injection
+
+We can do this by altering the source we get and serializing the data so that it does an SQL injection that exposes the password (this works because the table variable is in no way escaped). So how do we know this serialization works? Look above! The data that was initially given to us is serialized. Just that now, we're using it to get the flag.
+
+At first, we went polyglot mode and had a Python brute force that opened a Bash process that executed a curl command that took the output of a PHP script. 3 Languages! However, this caused a lot of problems with escaping because of Bash syntax and the need for \_ and \% escapes in MYSQL.
+
+So I decided to remove PHP from the equation by taking the output of the serialization and modifying it directly in Python.
+
+Using the brute force Python script, we were able to get the password of the admin user: sqL+%bj3c7!=FuN
+
+Logging in, it tells us that the flag is the admin's password surrounded by {}. Cool problem in the end and a nice 500 points.
+
+Flag: {sqL+%bj3c7!=FuN}

