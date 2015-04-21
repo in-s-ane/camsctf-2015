@@ -1,0 +1,18 @@
+It's AES.
+
+Go to http://aes.online-domain-tools.com and put in the output of 123456.txt as a hexdump and key 123456
+
+210ecd0964762a3116e302914308cb62966175144aa3a786618fdd273c9a
+4312d1fe1c05009c345404276e2a99719da81f7654f4180aa327de9d2b60
+b27f851045dcf86bda7f55e1b9a76f3b7a83627ad5a5b050c681c0dc57bf
+63b530691f706e6ac28a156954bc0ae8f7b810dbd6616cb266df95958f35
+a504a675b1efac87090b2146e3a27c109b71e0c066b3b08a3586737b1376
+d2f43806b58238ca231e42b9ad1ce9ffec595060e53c8045bcbb66726b75
+701cea95b1b77df0e4c01bec2f81f0e17eb3b2bc7daba0b4af5472f06dd9
+cdd4c9665457d3a88a8653d4e3bf
+
+123456
+
+Greetings Meterus 381: I can confirm your allegations that L.A.G. Inc is attempting to topple your organization. What you do with this information is not of my concern. Just remember, Anonymous is {4lw4y5_w47ch1ng}
+
+Flag: {4lw4y5_w47ch1ng}
