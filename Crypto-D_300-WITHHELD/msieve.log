@@ -1,0 +1,69 @@
+Tue Apr 21 00:43:44 2015  Msieve v. 1.52 (SVN Unversioned directory)
+Tue Apr 21 00:43:44 2015  random seeds: 3f06a858 d7c75793
+Tue Apr 21 00:43:44 2015  factoring 5402781180552782668953973941046317096919389759822397332691011281833142607685445546514933124263094226119 (103 digits)
+Tue Apr 21 00:43:45 2015  no P-1/P+1/ECM available, skipping
+Tue Apr 21 00:43:45 2015  commencing quadratic sieve (103-digit input)
+Tue Apr 21 00:43:46 2015  using multiplier of 1
+Tue Apr 21 00:43:46 2015  using generic 64kb sieve core
+Tue Apr 21 00:43:46 2015  sieve interval: 18 blocks of size 65536
+Tue Apr 21 00:43:46 2015  processing polynomials in batches of 6
+Tue Apr 21 00:43:46 2015  using a sieve bound of 3493957 (125000 primes)
+Tue Apr 21 00:43:46 2015  using large prime bound of 524093550 (28 bits)
+Tue Apr 21 00:43:46 2015  using double large prime bound of 4953769969335600 (44-53 bits)
+Tue Apr 21 00:43:46 2015  using trial factoring cutoff of 53 bits
+Tue Apr 21 00:43:46 2015  polynomial 'A' values have 13 factors
+Tue Apr 21 00:51:22 2015  131 relations (129 full + 2 combined from 7614 partial), need 125096
+Tue Apr 21 00:51:22 2015  elapsed time 00:07:38
+Tue Apr 21 00:51:40 2015  
+Tue Apr 21 00:51:40 2015  
+Tue Apr 21 00:51:40 2015  Msieve v. 1.52 (SVN Unversioned directory)
+Tue Apr 21 00:51:40 2015  random seeds: e27cfb5b 2c84244e
+Tue Apr 21 00:51:40 2015  factoring 5402781180552782668953973941046317096919389759822397332691011281833142607685445546514933124263094226119 (103 digits)
+Tue Apr 21 00:51:41 2015  no P-1/P+1/ECM available, skipping
+Tue Apr 21 00:51:41 2015  commencing quadratic sieve (103-digit input)
+Tue Apr 21 00:51:41 2015  using multiplier of 1
+Tue Apr 21 00:51:41 2015  using generic 64kb sieve core
+Tue Apr 21 00:51:41 2015  sieve interval: 18 blocks of size 65536
+Tue Apr 21 00:51:41 2015  processing polynomials in batches of 6
+Tue Apr 21 00:51:41 2015  using a sieve bound of 3493957 (125000 primes)
+Tue Apr 21 00:51:41 2015  using large prime bound of 524093550 (28 bits)
+Tue Apr 21 00:51:41 2015  using double large prime bound of 4953769969335600 (44-53 bits)
+Tue Apr 21 00:51:41 2015  using trial factoring cutoff of 53 bits
+Tue Apr 21 00:51:41 2015  polynomial 'A' values have 13 factors
+Tue Apr 21 00:51:41 2015  restarting with 129 full and 7614 partial relations
+Wed Apr 22 08:21:06 2015  125112 relations (29262 full + 95850 combined from 1881470 partial), need 125096
+Wed Apr 22 08:21:10 2015  begin with 1910732 relations
+Wed Apr 22 08:21:12 2015  reduce to 332802 relations in 11 passes
+Wed Apr 22 08:21:12 2015  attempting to read 332802 relations
+Wed Apr 22 08:21:19 2015  recovered 332802 relations
+Wed Apr 22 08:21:19 2015  recovered 325210 polynomials
+Wed Apr 22 08:21:20 2015  attempting to build 125112 cycles
+Wed Apr 22 08:21:20 2015  found 125112 cycles in 6 passes
+Wed Apr 22 08:21:20 2015  distribution of cycle lengths:
+Wed Apr 22 08:21:20 2015     length 1 : 29262
+Wed Apr 22 08:21:20 2015     length 2 : 20665
+Wed Apr 22 08:21:20 2015     length 3 : 20918
+Wed Apr 22 08:21:20 2015     length 4 : 17029
+Wed Apr 22 08:21:20 2015     length 5 : 13106
+Wed Apr 22 08:21:20 2015     length 6 : 9419
+Wed Apr 22 08:21:20 2015     length 7 : 6042
+Wed Apr 22 08:21:20 2015     length 9+: 8671
+Wed Apr 22 08:21:20 2015  largest cycle: 21 relations
+Wed Apr 22 08:21:21 2015  matrix is 125000 x 125112 (37.1 MB) with weight 9229339 (73.77/col)
+Wed Apr 22 08:21:21 2015  sparse part has weight 9229339 (73.77/col)
+Wed Apr 22 08:21:24 2015  filtering completed in 3 passes
+Wed Apr 22 08:21:24 2015  matrix is 120456 x 120520 (36.0 MB) with weight 8954228 (74.30/col)
+Wed Apr 22 08:21:24 2015  sparse part has weight 8954228 (74.30/col)
+Wed Apr 22 08:21:24 2015  saving the first 48 matrix rows for later
+Wed Apr 22 08:21:24 2015  matrix includes 64 packed rows
+Wed Apr 22 08:21:24 2015  matrix is 120408 x 120520 (25.4 MB) with weight 7450313 (61.82/col)
+Wed Apr 22 08:21:24 2015  sparse part has weight 5925881 (49.17/col)
+Wed Apr 22 08:21:24 2015  using block size 8192 and superblock size 98304 for processor cache size 1024 kB
+Wed Apr 22 08:21:26 2015  commencing Lanczos iteration
+Wed Apr 22 08:21:26 2015  memory use: 17.2 MB
+Wed Apr 22 08:21:42 2015  linear algebra at 10.1%, ETA 0h 2m
+Wed Apr 22 08:24:05 2015  lanczos halted after 1906 iterations (dim = 120407)
+Wed Apr 22 08:24:05 2015  recovered 17 nontrivial dependencies
+Wed Apr 22 08:24:07 2015  prp49 factor: 2387138776635375741923867468329379132354280601643
+Wed Apr 22 08:24:07 2015  prp55 factor: 2263287427372737185431258623661229697823729862967653333
+Wed Apr 22 08:24:07 2015  elapsed time 31:32:27
