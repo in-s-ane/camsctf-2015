@@ -1,0 +1,10 @@
+qpdf --stream-data=uncompress Anonymous.pdf out.pdf
+
+> binwalk -e out.pdf
+> cd _out.pdf.extracted
+> zip -r secret.docx *
+
+Inside secret.docx, the footer has a link to https://drive.google.com/file/d/0Bw8dGaC-LKWUc0JXNTctc29jSFU
+                    the header has a string 37fbfbaec5e23c4323c6df4634956e14
+
+
