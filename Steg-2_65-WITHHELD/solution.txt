@@ -1,0 +1,17 @@
+The problem states:
+"Find the message. There may or may not be a passphrase."
+
+Since we're given an MP3 file, let's find a program that performs steganography
+on MP3 files and supports encrypting with a passphrase. A quick Google search
+shows that MP3Stego is a popular tool that is available on Windows.
+
+Let's download it and try to find any hidden messages in our MP3 file!
+The problem description states that there may or may not be a passphrase.
+Hopefully, there isn't, or else we'll have to brute force the password!
+Scripting on Windows? Oh no!
+
+We `cd` into `MP3Stego_1_1_18/MP3Stego/` and just run the command: `Decode -X steg2.mp3`
+and enter in nothing as the passphrase. After a few seconds, we should have our
+steg2.mp3.txt which contains the flag:
+
+{mp3_st3g_s0_c00l}
