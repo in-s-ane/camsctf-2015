@@ -1,0 +1,20 @@
+The hint tells you that TweakPNG is not your friend. We later found out what they meant when we opened the image up in TweakPNG. After waiting a bit for it load all the text, we realized that there were tons of text in helix.png and TweakPNG gave us NO way to do a search for the flag.
+
+So, I fired up binwalk on helix.png and looked at the output. It's nice that they made it a nice pattern with the Zlib data compressing to 115 bytes. So the end of each segment is with a 0 or a 5. However, they secretly inserted the flag, which offsets the rest of the bytes. We can then look for the natural break in the pattern and this is where the flag will be.
+
+964060        0xEB5DC         Zlib compressed data, default compression
+964175        0xEB64F         Zlib compressed data, default compression
+964290        0xEB6C2         Zlib compressed data, default compression
+964405        0xEB735         Zlib compressed data, default compression
+964520        0xEB7A8         Zlib compressed data, default compression
+964663        0xEB837         Zlib compressed data, default compression
+964778        0xEB8AA         Zlib compressed data, default compression
+964893        0xEB91D         Zlib compressed data, default compression
+965008        0xEB990         Zlib compressed data, default compression
+965123        0xEBA03         Zlib compressed data, default compression
+
+> dd if=helix.png of=flag.zlib skip=964520 count=143 bs=1
+> python decrypt.py
+
+Looking at the output, we notice the flag:
+{5p3nc3r_no0o0_st0p}
