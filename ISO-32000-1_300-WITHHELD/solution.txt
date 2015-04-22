@@ -1,0 +1,18 @@
+First we ran the given pdf file through qpdf, with uncompressing the streams
+> qpdf --stream-data=uncompress ISO_32000_1.pdf stuff.pdf
+> binwalk stuff.pdf
+There would be a fake jpeg flag in there, and from the hint given to us, we are probably looking for the wrong thing.
+
+----- CORRECT SOLUTION -----
+
+Extract the encoded text:
+> dd if=ISO_32000_1.pdf of=cipher skip=14604 bs=1 count=70
+
+Then run it through the python decrypt.py to decode the zlib (or FLATE data)
+
+Then we put it back into the original ISO_32000_1.pdf, but remove the /AHX and /FlateDecode filters so that it matches the syntax of the fake image flag above it. In addition, we manually dumped the output of decrypt.py into that object stream since the numbers looked VERY similar to that of the fake image flag.
+
+Running it through pdf-parser:
+> ./pdf-parser.py -f ISO_32000_1.pdf
+
+Flag: {broken_streamz_0f_tears}
