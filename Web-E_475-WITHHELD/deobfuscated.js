@@ -50,8 +50,9 @@ function checkpass(password) {
         console.log(3);
         return false
     };
-    // hashed[0]["charCodeAt"](0) = 57 since hashed[0] = "9"
-    if (parseInt(tempNumbers["slice"](10, 20)["join"]("")) - 1026989203 != hashed[0]["charCodeAt"](0)) { // tempNumbers[10,11,12,13,14,15,16,17,18,19] = 1026989260
+    // hashed[0]["charCodeAt"](0) = 97-102 since hashed[0] = "a"-"f"
+    // tempNumbers[10,11,12,13,14,15,16,17,18,19] = 1026989203 + 97 = 1026989300 to 1026989305 = 1026989203 + 102
+    if (parseInt(tempNumbers["slice"](10, 20)["join"]("")) - 1026989203 != hashed[0]["charCodeAt"](0)) {
         console.log(4);
         return false
     };
@@ -59,9 +60,7 @@ function checkpass(password) {
         console.log(5);
         return false
     };
-    // 7 * 11 * 13 * 47287 * 477497 * 2641907 = tempNumbers[25-end] = 59712329280582550000
-    console.log(tempNumbers["slice"](25, tempNumbers["length"])["join"](""));
-    console.log(parseInt(tempNumbers["slice"](25, tempNumbers["length"])["join"]("")))
+    // 7 * 11 * 13 * 47287 * 477497 * 2641907 = tempNumbers[25-end] = 59712329280582550000 <-- NOT RIGHT because it exceed js max int. 59712329280582551573
     if (parseInt(tempNumbers["slice"](25, tempNumbers["length"])["join"]("")) / 2641907 !== 7 * 11 * 13 * 47287 * 477497) { 
         console.log(6);
         return false
@@ -92,6 +91,4 @@ function checkpass(password) {
     return true
 }
 
-console.log(
-    checkpass("93d332c726701a0269892600ffa04835acc97a1c23fc29c2805825ba50c0f000")
-)
+console.log(checkpass(process.argv[2])) // Gets argument from node obfuscated [HASH]

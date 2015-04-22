@@ -6,7 +6,7 @@ for i in range(0, len(binary)):
     data[i%17] += binary[i]
 
 data = [chr(int(ch, 2)) for ch in data]
-print data
+#print data
 
 hashed = [""] * 64
 hashed[6] = data[0]
@@ -28,13 +28,18 @@ hashed[58] = data[15]
 hashed[60] = data[16]
 hashed[2] = "d"
 
+hashed[0] = "b" # This has to be modified so that it follows the hint given that the first is a-f. b is the correct one
+
 index = 0
-for ch in "9" + "333" + "272670" + "1026989260" + "00483" + "59712329280582550000":
+for ch in "9" + "333" + "272670" + str(1026989203 + ord(hashed[0])) + "00483" + "59712329280582551573":
     while hashed[index] != "":
         index += 1
     hashed[index] = ch
 
-print hashed
+print ''.join(hashed)
 
-# 0_________1_________2_________3_________4_________5_________6___
-# 93d332c726701a0269892600ffa04835acc97a1c23fc29c2805825ba55c0f000
+# b9d333c272670a1026989301ffa00483acc59a7c12fc32c9280582ba55c1f573 is the correct hash
+# http://md5hashing.net/hash/sha256/b9d333c272670a1026989301ffa00483acc59a7c12fc32c9280582ba55c1f573?is_search=true 
+# We get the decoded value of bitwize123
+# Inputting that on the server:
+# Flag: {srsly?_dis?_DIS_OBFUSCATED_PAIN?}
