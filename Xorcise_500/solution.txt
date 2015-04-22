@@ -1,0 +1,17 @@
+Literally the bashiest solution of all time. So after playing around with the
+evil binary you realize that the gen_key function generates a correct seriel
+based on the first 5 letters of the seriel you put in.
+
+This seems to be pretty bashable, so let's do it.
+
+First we need an executable gdb file, which will be produced by bashXorGen.py.
+The actual generated file is HUGE, so i'm not going to push it here, but the
+idea is basically run over and over again with all possible seriel starters.
+
+Then you just
+
+gdb ./evil -x xorBash | grep "JW9CI"
+
+Which, after about 10-15-20 minutes (i was afk) it'll give you the flag:
+
+ABARR-P7M95-R8CEQ-WC6V9-JW9CI
