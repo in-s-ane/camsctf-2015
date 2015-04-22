@@ -1,3 +1,18 @@
+import itertools
+
+def check_prime(n, primes):
+    for p in primes:
+        if not n % p:
+            return False
+    return True
+
+def prime_sieve():
+    primes = set()
+    for n in itertools.count(2):
+        if check_prime(n, primes):
+            primes.add(n)
+            yield n
+
 semi_prime = 5402781180552782668953973941046317096919389759822397332691011281833142607685445546514933124263094226119
 
 # Credits to msieve for being awesome at factoring although it took 32 hours... LOL
@@ -32,14 +47,21 @@ def generate_key(e):
         d = "bad"
     return (n, e, d)
 
+o = open("primes", "r")
+primes = o.read().split(" ")[1:]
+primes = [int(num) for num in primes]
+
 def crack():
-    for i in range(3, 100000000):
+    g = prime_sieve()
+    for i in g:
+        #print i
         n, e, d = generate_key(i)
         if d != "bad":
             try:
                 flag = pow(c, d, n)
-                print hex(flag)[2:-1].decode("hex")
-                return
+                flag = hex(flag)[2:-1].decode("hex")
+                if "{" in flag and "}" in flag:
+                    print i, flag
             except:
                 pass
 crack()
