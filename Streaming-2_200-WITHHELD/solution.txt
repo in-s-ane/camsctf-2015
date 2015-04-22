@@ -1,0 +1,19 @@
+First, we'll use WinRAR to extract `secret2.docx` from `secret2.rar`
+We specify the -os flag to tell WinRAR to preserve NTFS streams.
+
+>"C:\Program Files\WinRAR\Rar.exe" -os x secret2.rar
+
+Next we'll list the directory with the /r flag to find the names of alternate
+data stream files.
+> dir /r
+
+Now we'll get a LONG list of embedded files in secret2.docx with the naming
+pattern flag{number}.txt where 0 <= number <= 4820.
+
+Since we don't want to read the contents of each file manually, we'll write a
+batch script to do this for us. (see solve.bat)
+
+Running solve.bat will reveal that flag4241.txt is different from the rest and
+contains the flag:
+{MaSteR_0f_AlT_sTrEaMs}
+
