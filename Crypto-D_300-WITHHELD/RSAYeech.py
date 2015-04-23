@@ -44,6 +44,7 @@ def printableAscii(string):
 f = open("RSASolve.txt","a");
 
 for e in range(int(sys.argv[1]),int(sys.argv[2])):
+    try:
 	if gcd(e,totient) == 1:
 		d = modinv(e,totient);
 		m = pow(c,d,k);
@@ -56,6 +57,8 @@ for e in range(int(sys.argv[1]),int(sys.argv[2])):
 			if printableAscii(str(hexM)[2:-1].decode("hex")):
 				print str(hexM)[2:-1].decode('hex');
 		#print "Result: %s" %(hex(d)[2:].decode("hex"));
+    except Exception:
+        print e
 
 print "we done here"
 
