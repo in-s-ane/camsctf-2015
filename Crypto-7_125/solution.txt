@@ -1,10 +1,31 @@
-qpdf --stream-data=uncompress Anonymous.pdf out.pdf
+First we decompress all the streams in the pdf
+> qpdf --stream-data=uncompress Anonymous.pdf out.pdf
 
+Next we extract all the docx elements from the pdf using binwalk's built in extraction
 > binwalk -e out.pdf
+
+Let's take a look at the extraction...
 > cd _out.pdf.extracted
+
+Now we combine everything together into a docx, but after we remove the useless *.zlib and *.zip files
+> rm -f *.zlib *.zip
 > zip -r secret.docx *
 
 Inside secret.docx, the footer has a link to https://drive.google.com/file/d/0Bw8dGaC-LKWUc0JXNTctc29jSFU
+                    the header has a string d4760721c2573778fdaadfa567cd3d6d
+
+When you visit the google drive link, you are faced with a file =).txt.cpt
+Upon doing some research, we came across the ccrypt utility and download it to decrypt the message.
+
+Initially I tried the string as the decryption key and its hex-decoded string as the key, but that didn't work. But then I realized that it might've been a hash that we were given. So I simply searched in a rainbow table and there it was, the key: http://md5hashing.net/search/all/d4760721c2573778fdaadfa567cd3d6d?is_search=true#main
+
+> ./ccrypt -d -c -K l0rdh3l1x \=\).txt.cpt
+
+Greetings L.A.G. Inc:
+Meterus 381 is aware of your activities. Proceed with caution. You may call me Anonymous. I am neither here nor there, with you, or against you. {1_4m_3v3rywh3r3}.
+
+
+--- OLD FILES (AKA REPLACED AFTER UPDATE) ---
+Inside secret.docx, the footer has a link to https://drive.google.com/file/d/0Bw8dGaC-LKWUc0JXNTctc29jSFU
                     the header has a string 37fbfbaec5e23c4323c6df4634956e14
-
-
+---------------------------------------------
