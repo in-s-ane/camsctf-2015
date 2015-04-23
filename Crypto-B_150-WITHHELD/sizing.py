@@ -1,8 +1,8 @@
 import sys
 from PIL import Image
 
-RESIZED_WIDTH = 800
-RESIZED_HEIGHT = 1618
+RESIZED_WIDTH = 1618
+RESIZED_HEIGHT = 1000
 
 def read(img):
     image = Image.open(img)
