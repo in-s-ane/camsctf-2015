@@ -1,6 +1,9 @@
 from django.conf import settings
 from django.core import signing
 
+# Run this inside `./manage.py shell`
+# >> execfile("solution.py")
+
 signed = 'eyJ1c2VyIjoiNDMxNjEyIn0:1YlUhB:CrsJLAuRSbP1_ZmFR64EhVN1fd8'
 with open("dictionary.txt", "r") as f:
     words = f.read().split("\n")
