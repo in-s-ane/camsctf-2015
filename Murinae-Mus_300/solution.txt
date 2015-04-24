@@ -1,0 +1,7 @@
+When we open the pcap file in Wireshark, we notice that it's a lot of USB data being transferred from the client (USB Device) and host (Computer). From the problem name, Murinae Mus, we assume that it has something to do with the signals from a computer mouse. Also looking at the first few exchanges, we see that the USB Controller recognizes a Logitech device.
+
+After the identification exchange, we see a lot of USB_INTERRUPT_IN which is control data sent from the mouse to the computer. Let's extract all of this data:
+> tshark -r murinae_mus.pcap -T fields -e usb.capdata > usb_data.txt
+> tshark -r murinae_mus.pcap -t dd > usb_time_deltas.txt
+
+
