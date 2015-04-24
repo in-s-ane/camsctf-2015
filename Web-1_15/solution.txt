@@ -1,0 +1,9 @@
+If we open up the page, we'll see a login form.
+Of course, the first thing we should do is inspect the source, upon which we'll
+find the HTML comment:
+<!--backup:Ckwqw23-->
+
+This is a backup password for the login form, so let's just use that!
+
+After submitting, we get the flag:
+{hello_html_w0rld}
