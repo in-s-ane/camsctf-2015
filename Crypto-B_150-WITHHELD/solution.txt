@@ -1,0 +1,9 @@
+Basically this requires us to "resize" the image so that it's not just one long time. So, we'll shift all the pixels into multiple rows to recreate the original image. I had to resave the original image given to us in crypto_b-fixed.png because it would not read in PIL.
+
+> python sizing.py crypto_b-fixed.png
+> open out-1618x1000.png 
+
+So they've found out. We have nothing else to hide; our cover is blown. We wired exactly $5.00 out of Fiddler Investments in order to pay for our Minecraft servers.
+Ninteenus Withdrawing From Meterus 381: Any remaining members may cease operations.{G0d5p33d}
+
+Flag: {G0d5p33d}
