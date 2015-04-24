@@ -57,8 +57,9 @@ for e in range(int(sys.argv[1]),int(sys.argv[2])):
 			if printableAscii(str(hexM)[2:-1].decode("hex")):
 				print str(hexM)[2:-1].decode('hex');
 		#print "Result: %s" %(hex(d)[2:].decode("hex"));
-    except Exception:
+    except KeyboardInterrupt:
         print e
+        sys.exit(1)
 
 print "we done here"
 
