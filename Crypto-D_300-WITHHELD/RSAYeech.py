@@ -43,6 +43,10 @@ def printableAscii(string):
 
 f = open("RSASolve.txt","a");
 
+d = modinv(65537, totient);
+m = pow(c, d, k)
+print "%x" % m
+
 for e in range(int(sys.argv[1]),int(sys.argv[2])):
     try:
 	if gcd(e,totient) == 1:
