@@ -1,1 +1,1 @@
-strings cropped.jpg | grep "\{[A-Za-z0-9_]\+\}"
+strings cropped.jpg | grep "{[A-Za-z0-9_]\+}"
