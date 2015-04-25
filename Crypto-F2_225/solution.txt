@@ -1,0 +1,14 @@
+We know that the first and last element in the list must represent '{' and '}'
+respectively, so let's take a look at how they differ from '{' (123 in ASCII)
+and '}' (125 in ASCII). The first element of the list is 129, which is 6 greater
+than 123 and the last is 131, which is also 6 greater than 131. Now, let's find
+a pattern that maps the numbers in the list to the numbers we want to decode to
+get the flag. Let's take a look at the value of `b` for the first index,
+assuming that `a` represents the index (one-based) of each number in the list.
+When we evaluate `(2%3) + (2%5) + (2%7)` we get 6! This is no coincidence: when we
+do the same for the last index in the list, we get `(2^19 % 3) + (2^19 % 5) +
+(2^19 % 7)` which is also 6! This is the pattern/function that maps the encrypted
+list of numbers to the list of numbers that comprise the flag. See solve.py for
+the solution script.
+
+Flag: {3nd_0f_th3_w0rld}
