@@ -1,3 +1,6 @@
+# Credits to CAMSCSC for providing this wonderful program
+# https://github.com/CAMSCSC/Learn/blob/master/forensics/steg1/reveal.py
+
 from PIL import Image
 
 def reveal(input_image_file):
