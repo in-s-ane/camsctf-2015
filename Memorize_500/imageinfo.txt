@@ -1,0 +1,17 @@
+Determining profile based on KDBG search...
+
+          Suggested Profile(s) : WinXPSP2x86, WinXPSP3x86 (Instantiated with WinXPSP2x86)
+                     AS Layer1 : IA32PagedMemoryPae (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/Users/Danny/Downloads/volatility_2.4.mac.standalone/memory.raw)
+                      PAE type : PAE
+                           DTB : 0x351000L
+                          KDBG : 0x8054d2e0
+          Number of Processors : 4
+     Image Type (Service Pack) : 3
+                KPCR for CPU 0 : 0xffdff000
+                KPCR for CPU 1 : 0xf8942000
+                KPCR for CPU 2 : 0xf894a000
+                KPCR for CPU 3 : 0xf8952000
+             KUSER_SHARED_DATA : 0xffdf0000
+           Image date and time : 2015-03-20 03:24:22 UTC+0000
+     Image local date and time : 2015-03-19 20:24:22 -0700

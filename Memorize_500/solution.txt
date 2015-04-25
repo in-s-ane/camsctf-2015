@@ -1,0 +1,28 @@
+First we get what kind of memory image we're dealing with... turns out it's windows
+./volatility_2.4_x64 -f memory.raw imageinfo > imageinfo.txt
+
+Then we get the processes that are running. The two that we focus on are the virus.exe (PID 776) and firefox.exe (PID 2656)
+./volatility_2.4_x64 -f memory.raw pslist > pslist.txt
+
+1. ./volatility_2.4_x64 -f memory.raw cmdscan > cmdscan.txt or ./volatility_2.4_x64 -f memory.raw consoles > consoles.txt
+    Cmd #2 @ 0x5029f0: net user Administrator u_g0t_hacked_trolololoLOL
+
+    Solution: u_g0t_hacked_trolololoLOL
+
+2. ./volatility_2.4_x64 -f memory.raw memdump -p 776 --dump-dir .
+   Then `strings 776.dmp` and the first thing that looks like a "flag":
+
+    Solution: going_viral...not_really
+
+3. mkdir files; ./volatility_2.4_x64 -f memory.raw dumpfiles -p 2656 --dump-dir files > dumpfiles.txt
+   From one of the dumps we get that the email is eleethaxzorz314
+   We also extracted the key3.db and login.json. Then opening these in Firefox or any password viewer, we get the password of the gmail account. Read more about it here: https://support.mozilla.org/en-US/kb/recovering-important-data-from-an-old-profile?redirectlocale=en-US&redirectslug=Recovering+important+data+from+an+old+profile
+
+    Solution: F8Zht8G752CszF
+
+We submitted:
+u_g0t_hacked_trolololoLOL, going_viral...not_really, F8Zht8G752CszF
+
+
+We also got screenshots of gui in the memory for fun.
+mkdir screenshots; ./volatility_2.4_x64 -f memory.raw screenshots --dump-dir screenshots

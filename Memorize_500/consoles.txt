@@ -1,0 +1,124 @@
+**************************************************
+ConsoleProcess: csrss.exe Pid: 620
+Console: 0x5023b0 CommandHistorySize: 50
+HistoryBufferCount: 3 HistoryBufferMax: 4
+OriginalTitle: %SystemRoot%\system32\cmd.exe
+Title: C:\WINDOWS\system32\cmd.exe
+AttachedProcess: cmd.exe Pid: 428 Handle: 0x34c
+----
+CommandHistory: 0x5027c0 Application: net1.exe Flags: 
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x0
+----
+CommandHistory: 0x10387f0 Application: net.exe Flags: 
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x0
+----
+CommandHistory: 0x10386f8 Application: cmd.exe Flags: Allocated, Reset
+CommandCount: 3 LastAdded: 2 LastDisplayed: 2
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x34c
+Cmd #0 at 0x502fb0: net user
+Cmd #1 at 0x502f78: net user Administrator
+Cmd #2 at 0x5029f0: net user Administrator u_g0t_hacked_trolololoLOL
+----
+Screen 0x502ab0 X:80 Y:300
+Dump:
+Microsoft Windows XP [Version 5.1.2600]                                         
+(C) Copyright 1985-2001 Microsoft Corp.                                         
+                                                                                
+C:\Documents and Settings\Administrator>net user                                
+                                                                                
+User accounts for \\CCTF-4EAF2AEA99                                             
+                                                                                
+------------------------------------------------------------------------------- 
+Administrator            Guest                    HelpAssistant                 
+SUPPORT_388945a0                                                                
+The command completed successfully.                                             
+                                                                                
+                                                                                
+C:\Documents and Settings\Administrator>net user Administrator                  
+User name                    Administrator                                      
+Full Name                                                                       
+Comment                      Built-in account for administering the computer/dom
+ain                                                                             
+User's comment                                                                  
+Country code                 000 (System Default)                               
+Account active               Yes                                                
+Account expires              Never                                              
+                                                                                
+Password last set            3/18/2015 4:45 PM                                  
+Password expires             Never                                              
+Password changeable          3/18/2015 4:45 PM                                  
+Password required            Yes                                                
+User may change password     Yes                                                
+                                                                                
+Workstations allowed         All                                                
+Logon script                                                                    
+User profile                                                                    
+Home directory                                                                  
+Last logon                   3/19/2015 6:47 PM                                  
+                                                                                
+Logon hours allowed          All                                                
+                                                                                
+Local Group Memberships      *Administrators                                    
+Global Group memberships     *None                                              
+The command completed successfully.                                             
+                                                                                
+                                                                                
+C:\Documents and Settings\Administrator>net user Administrator u_g0t_hacked_trol
+ololoLOL                                                                        
+The command completed successfully.                                             
+                                                                                
+                                                                                
+C:\Documents and Settings\Administrator>                                        
+**************************************************
+ConsoleProcess: csrss.exe Pid: 620
+Console: 0x504af0 CommandHistorySize: 50
+HistoryBufferCount: 1 HistoryBufferMax: 4
+OriginalTitle: C:\Documents and Settings\Administrator\Desktop\virus.exe
+Title: C:\Documents and Settings\Administrator\Desktop\virus.exe
+AttachedProcess: virus.exe Pid: 776 Handle: 0x814
+----
+CommandHistory: 0x504ec0 Application: virus.exe Flags: Allocated
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x814
+----
+Screen 0x504da0 X:80 Y:300
+Dump:
+
+**************************************************
+ConsoleProcess: csrss.exe Pid: 620
+Console: 0x1037d40 CommandHistorySize: 50
+HistoryBufferCount: 2 HistoryBufferMax: 4
+OriginalTitle: %SystemRoot%\system32\cmd.exe
+Title: C:\WINDOWS\system32\cmd.exe
+----
+CommandHistory: 0x1059970 Application: ipconfig.exe Flags: 
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x0
+----
+CommandHistory: 0x1059878 Application: cmd.exe Flags: 
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x0
+**************************************************
+ConsoleProcess: csrss.exe Pid: 620
+Console: 0x1038958 CommandHistorySize: 50
+HistoryBufferCount: 1 HistoryBufferMax: 4
+OriginalTitle: C:\Program Files\VMware\VMware Tools\TPAutoConnSvc.exe
+Title: C:\Program Files\VMware\VMware Tools\TPAutoConnSvc.exe
+AttachedProcess: TPAutoConnect.e Pid: 1676 Handle: 0x6f0
+----
+CommandHistory: 0x1038e50 Application: TPAutoConnect.exe Flags: Allocated
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x6f0
+----
+Screen 0x1038c50 X:80 Y:25
+Dump:
+ThinPrint AutoConnect component, Copyright (c) 1999-2013 Cortado AG, 8.8.776.1  
