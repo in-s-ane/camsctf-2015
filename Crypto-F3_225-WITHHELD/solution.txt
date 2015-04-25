@@ -1,0 +1,43 @@
+If we make a Google search of the given floating point values, one of the
+results we find is:
+
+Tablas trigonométricas - Tripod
+tecnica92.tripod.com/academias/matematicas/.../log.ht... - Translate this page
+4, 1.3862943611198906. 5, 1.6094379124341003 ... 3.912023005428146. 51, 3.9318256327243257 ... 4.543294782270004. 95, 4.553876891600541 ... 107, 4.672828834461906 ... 112, 4.718498871295094 ... 123, 4.812184355372417.
+
+If we open up this page, we find a natural logarithm table, and running a few
+quick searches verifies that the numbers we are given are all on the table and
+correspond to printable ASCII values, notably starting with 123 and ending with
+125, which we should by this point recognize as the decimal values for '{' and
+'}', respectively.
+The floating point values that follow are values of ln(x)
+
+4.812184355372417 => 123
+4.672828834461906 => 107
+3.9318256327243257 => 51
+3.9318256327243257 => 51
+4.718498871295094 => 112
+4.553876891600541 => 95
+4.624972813284271 => 102
+4.736198448394496 => 114
+3.871201010907891 => 48
+4.6913478822291435 => 109
+4.553876891600541 => 95
+3.9318256327243257 => 51
+4.787491742782046 => 120
+4.007333185232471 => 55
+4.653960350157523 => 105
+4.700480365792417 => 110
+4.59511985013459 => 99
+4.7535901911063645 => 116
+3.8918202981106265 => 49
+3.871201010907891 => 48
+4.700480365792417 => 110
+4.8283137373023015 => 125
+
+http://tecnica92.tripod.com/academias/matematicas/tablas/log.html
+Alternatively, we can just calculate them by raising e to each number.
+
+Run the solve.py script to convert these numbers to ASCII
+The flag is:
+{k33p_fr0m_3x7inct10n}
