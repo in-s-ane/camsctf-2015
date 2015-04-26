@@ -28,7 +28,7 @@ for d, t in zip(data, times):
         #print movement
         continue
 
-    '''
+    ''' # This is to print out the mouse data in readable form
     delta = float(t[6:14])
     movement = ["%8d"%int(m, 16) for m in movement]
     if "1" in movement[0]:
@@ -48,6 +48,8 @@ for d, t in zip(data, times):
     movement = ["%.6f"%delta] + movement
     #print movement
     '''
+
+    # This is to draw the mouse movement
     delta = float(t[6:14])
     old_mouse_x = mouse_x
     old_mouse_y = mouse_y

@@ -4,4 +4,8 @@ After the identification exchange, we see a lot of USB_INTERRUPT_IN which is con
 > tshark -r murinae_mus.pcap -T fields -e usb.capdata > usb_data.txt
 > tshark -r murinae_mus.pcap -t dd > usb_time_deltas.txt
 
+Reference this: http://www.orangecoat.com/how-to/read-and-decode-data-from-your-mouse-using-this-pyusb-hack
+Then we can take all the instances for when the mouse was "clicked" which is when the the first set of bytes is 01 or 02.
+Decoding this as binary where the left mouse click is 0 and the right mouse click is 1, we get the flag
 
+Flag: {cl1ck_c1ick}
