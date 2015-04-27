@@ -1,0 +1,5 @@
+We first exploded the video into over 10000 frames:
+ffmpeg -i what.mp4 -r 120 -f image2 image-%06d.png
+
+Then looking through each one, at frame 6813, we see that the flag is a transparent layer in the background.
+{NOW_YOU_SEE}
