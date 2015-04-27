@@ -1,3 +1,5 @@
+import binascii
+
 dependencies_loaded = False
 try:
     from PIL import Image
@@ -47,6 +49,7 @@ with open("crypto_f4-fixed.png", "w") as f:
     png = ''.join(extracted_png)
     f.write(png)
 
+decoded = ""
 if dependencies_loaded:
     scanner = zbar.ImageScanner()
     scanner.parse_config('enable')
@@ -58,3 +61,15 @@ if dependencies_loaded:
     for symbol in barcode:
         print 'Decoded', symbol.type, 'symbol:', '"%s"' % symbol.data
     del(image)
+    decoded = symbol.data
+
+flag = ""
+temp = ""
+for i in range(0, len(decoded)):
+    temp += decoded[i]
+    if 32 <= int(temp) <= 126:
+        flag += chr(int(temp))
+        temp = ""
+print flag
+
+# {3nd_7r4n5m15510n}-Anonymous
